@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript", src="jquery/lib/jquery.js"></script>
+	<script type="text/javascript", src='jquery/lib/jquery.bgiframe.min.js'></script>
+	<script type="text/javascript", src='jquery/lib/jquery.ajaxQueue.js'></script>
+	<script type="text/javascript", src='jquery/jquery.autocomplete.js'></script>
+	<link rel="stylesheet" type="text/css" href="jquery/jquery.autocomplete.css">	
+</head>
+
+<body>
+	<script>
+		var availableTags = [
+			'かいせんチヂミ　海鮮チヂミ　해물전 1090',
+			'かいせんなべ　海鮮鍋　해물탕 1590',
+			'かくてき　カクテキ　깍두기 390'
+		];
+	</script>
+	<form name="form1" method="post" action="result.php">
+		<input type="text" id="searchbox">
+		<input type="submit" id="sumit" value="검색">
+	</form>
+	<script>
+		$(document).ready(function(){
+			$("#searchbox").autocomplete(availableTags, {
+				matchContains: true,
+				selectFirst: false
+			});
+		});
+	</script>
+</body>
+
+</html>
