@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script type="text/javascript" src="app.js"></script>
+    <meta charset="UTF-8">
+    <script type="text/javascript", src="jquery/lib/jquery.js"></script>
+    <script type="text/javascript", src='jquery/lib/jquery.bgiframe.min.js'></script>
+    <script type="text/javascript", src='jquery/lib/jquery.ajaxQueue.js'></script>
+    <script type="text/javascript", src='jquery/jquery.autocomplete.js'></script>
+    <link rel="stylesheet" type="text/css" href="jquery/jquery.autocomplete.css">
+    <script language="Javascript">
+        var availableTags = [
+               'かいせんチヂミ 海鮮チヂミ 해물전 1090',
+               'かいせんなべ 海鮮鍋 해물탕 1590',
+               'かくてき カクテキ 깍두기 390'
+        ];
+
+        $(document).ready(function(){
+            $("#menu").autocomplete(availableTags, {
+                matchContains: true,
+                selectFirst: false
+            });
+        });
+    </script>
+</head>
+<body onload="load()">
+<div id="myform">
+<b>Select Menu</b>
+<table>
+    <tr>
+        <td>menu:</td>
+        <td><input type="text" id="menu">
+        <input type="button" id="add" value="Add" onclick="Javascript:addRow()"></td>
+        <td></td>
+    </tr>
+    <tr>&nbsp;</tr>
+    <tr>&nbsp;</tr>
+</table>
+
+</div>
+
+<div id="mydata">
+<b>Current data in the system ...</b>
+<input type="button" value="Sum" onclick="Javascript:sumprice()">
+<table id="myTableData"  border="1" cellpadding="2">
+</table>
+&nbsp;<br/>
+</div>
+<b>Total : </b>
+<b id="total"></b>
+</body>
+</html>
