@@ -1,36 +1,36 @@
 function plus(obj){
-    var value = parseInt(document.getElementById('number').value, 10);
+    var value = parseInt(document.getElementById('num').value, 10);
     value = isNaN(value) ? 0 : value;
     if(value<10){
         value++;
-            document.getElementById('number').value = value;
+            document.getElementById('num').value = value;
     }
 }
 function minus(){
-    var value = parseInt(document.getElementById('number').value, 10);
+    var value = parseInt(document.getElementById('num').value, 10);
     value = isNaN(value) ? 0 : value;
     if(value>1){
         value--;
-            document.getElementById('number').value = value;
+            document.getElementById('num').value = value;
     }
 }
 
 function addRow() {
     var Mymenu = document.getElementById("menu");
     var Mymenu_split = Mymenu.value.split(' ');
-    var price = Mymenu_split[3];
+    var price_mixed = Mymenu_split[3];
+    var price = price_mixed.match(/\d+/g).map(Number);
     var table = document.getElementById("myTableData");
-
     var rowCount = table.rows.length;
     var row = table.insertRow(rowCount);
+    document.getElementById("menu").value = "";
 
     row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
     row.insertCell(1).innerHTML= Mymenu_split[0];
     row.insertCell(2).innerHTML= Mymenu_split[1];
     row.insertCell(3).innerHTML= Mymenu_split[2];
-    row.insertCell(4).innerHTML= '<form onsubmit="return false" oninput="o.value = parseInt(a.value)"><input style="width: 2em;" name="a" type="number" step="any"><output name="o" type="hidden"></output></form>';
+    row.insertCell(4).innerHTML= '<form onsubmit="return false" oninput="o.value = parseInt(a.value)"><input name="a" type="number" min="1" step="any"><output name="o" type="hidden"></output></form>';
     row.insertCell(5).innerHTML= price;
-    
 }
 
 function sumprice(){
