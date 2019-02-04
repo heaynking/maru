@@ -1,17 +1,18 @@
 function plus(obj){
-        var index = obj.parentNode.parentNode.rowIndex;
-        var table = document.getElementById("myTableData");
-        hn = table.rows.item(this);
-        alert(hn.innerHTML);
-        hm = document.getElementById("amount");
-        hm.value ++ ;
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value<10){
+        value++;
+            document.getElementById('number').value = value;
+    }
 }
 function minus(){
-        hm = document.getElementById("amount");
-        sum = document.getElementById("rowtotal");
-    if (hm.value > 1) {
-         hm.value -- ;
-          }
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value>1){
+        value--;
+            document.getElementById('number').value = value;
+    }
 }
 
 function addRow() {
@@ -27,8 +28,9 @@ function addRow() {
     row.insertCell(1).innerHTML= Mymenu_split[0];
     row.insertCell(2).innerHTML= Mymenu_split[1];
     row.insertCell(3).innerHTML= Mymenu_split[2];
-    row.insertCell(4).innerHTML= price;
-    row.insertCell(5).innerHTML= '<input type="text" size="1" value="1" id="amount"><input type="button" value = "-" onClick="Javacsript:minus()"><input type="button" value = "+" onClick="Javacsript:plus(this)">';
+    row.insertCell(4).innerHTML= '<form onsubmit="return false" oninput="o.value = parseInt(a.value)"><input style="width: 2em;" name="a" type="number" step="any"><output name="o" type="hidden"></output></form>';
+    row.insertCell(5).innerHTML= price;
+    
 }
 
 function sumprice(){
@@ -39,6 +41,15 @@ function sumprice(){
         }
  
         document.getElementById("total").textContent = sum;
+}
+
+function pricesum(){
+  var table = document.getElementById("myTableData"), sumVal = 0;
+
+  for (var i = 0; i < table.rows.length; i++){
+    sumVal = sumVal + parseInt(table.rows[i].cells[4].textContent) * parseInt(table.rows[i].cells[5].textContent);
+  }
+  document.getElementById("total").innerHTML = sumVal;
 }
 
 function deleteRow(obj) {
