@@ -1,18 +1,26 @@
 function plus(obj){
-    var value = parseInt(document.getElementById('num').value, 10);
-    value = isNaN(value) ? 0 : value;
-    if(value<10){
-        value++;
-            document.getElementById('num').value = value;
+    var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("myTableData");
+    for (var i = 0; i < table.rows.length; i++){
+      var value = parseInt(table.rows[index].cells[4].textContent);
     }
+    value++;
+    for (var i = 0; i < table.rows.length; i++){
+      table.rows[index].cells[4].textContent = value;
+    }
+    
 }
-function minus(){
-    var value = parseInt(document.getElementById('num').value, 10);
-    value = isNaN(value) ? 0 : value;
-    if(value>1){
-        value--;
-            document.getElementById('num').value = value;
+function minus(obj){
+    var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("myTableData");
+    for (var i = 0; i < table.rows.length; i++){
+      var value = parseInt(table.rows[index].cells[4].textContent);
     }
+    value--;
+    for (var i = 0; i < table.rows.length; i++){
+      table.rows[index].cells[4].textContent = value;
+    }
+    
 }
 
 function addRow() {
@@ -26,21 +34,11 @@ function addRow() {
     document.getElementById("menu").value = "";
 
     row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
-    row.insertCell(1).innerHTML= Mymenu_split[0];
-    row.insertCell(2).innerHTML= Mymenu_split[1];
-    row.insertCell(3).innerHTML= Mymenu_split[2];
-    row.insertCell(4).innerHTML= '<form onsubmit="return false" oninput="o.value = parseInt(a.value)"><input name="a" type="number" min="1" step="any"><output name="o" type="hidden"></output></form>';
+    row.insertCell(1).innerHTML= Mymenu_split[1];
+    row.insertCell(2).innerHTML= Mymenu_split[2];
+    row.insertCell(3).innerHTML= '<input type="button" value = "-" onClick="Javacsript:minus(this)"><input type="button" value = "+" onClick="Javacsript:plus(this)">';
+    row.insertCell(4).innerHTML= '1';
     row.insertCell(5).innerHTML= price;
-}
-
-function sumprice(){
-        let rows = document.querySelectorAll("table tr td:last-child");
-        let sum = 0;
-        for (let i = 0; i < rows.length; i++) {
-            sum += Number(rows[i].textContent);
-        }
- 
-        document.getElementById("total").textContent = sum;
 }
 
 function pricesum(){
