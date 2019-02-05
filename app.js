@@ -36,7 +36,7 @@ function addRow() {
     row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
     row.insertCell(1).innerHTML= Mymenu_split[1];
     row.insertCell(2).innerHTML= Mymenu_split[2];
-    row.insertCell(3).innerHTML= '<input type="button" value = "-" onClick="Javacsript:minus(this)"><input type="button" value = "+" onClick="Javacsript:plus(this)">';
+    row.insertCell(3).innerHTML= '<input type="button" value = "-" onClick="Javacsript:minus(this)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value = "+" onClick="Javacsript:plus(this)">';
     row.insertCell(4).innerHTML= '1';
     row.insertCell(5).innerHTML= price;
 }
