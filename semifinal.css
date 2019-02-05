@@ -1,3 +1,8 @@
+#myform{
+    margin: 0 auto;
+    width: 500px;
+}
+
 #menu{
     border-top:thin solid  #e5e5e5;
     border-right:thin solid #e5e5e5;
@@ -5,11 +10,13 @@
     border-left:thin solid  #e5e5e5;
     box-shadow:0px 1px 1px 1px #e5e5e5;
     float:left;
-    height:20px;
-    margin:.8em 0 0 .5em; 
+    height:86px;
+    margin-left:auto; 
+    margin-right:auto; 
     outline:0;
     padding:.4em 0 .4em .6em; 
-    width:200px; 
+    width:300px;
+    font-size: 30px;
 }
   
 #button-holder{
@@ -18,15 +25,16 @@
     box-shadow:1px 1px 1px 1px #e5e5e5;
     cursor:pointer;
     float:left;
-    height:30px;
-    margin:11px 0 0 0;
+    height:110px;    
+    margin-left:auto; 
+    margin-right:auto;
     text-align:center;
-    width:50px;
+    width:110px;
 }
   
 #button-holder img{
-    margin:4px;
-    width:20px; 
+    margin:30px;
+    width:50px; 
 }
 #total{
     border: 0;
@@ -34,22 +42,27 @@
     border-bottom: 1px solid black;
     box-shadow:0px 1px 1px 1px #e5e5e5;
     float:left;
-    height:20px;
-    margin:.8em 0 0 .5em; 
+    height:80px;  
+    margin-left:auto; 
+    margin-right:auto;
     outline:0;
     padding:.4em 0 .4em .6em; 
     width:200px; 
-    font-size: 20px;
+    font-size: 30px;
+    bottom: 0;
+    text-align: center;
+    line-height: 80px;
 }
 #total_btn{
     background-color:#f1f1f1;
     border-top:thin solid #e5e5e5;
     cursor:pointer;
     float:left;
-    height:33px;
-    margin:11px 0 0 0;
+    height:105px;    
+    margin-left:auto; 
+    margin-right:auto;
     text-align:center;
-    width:50px;
+    width:100px;
 }
 
 .wp-table tr:nth-child(odd) {
@@ -66,7 +79,8 @@
 
 .wp-table th:first-child, 
 .wp-table td:first-child {
-    padding-left: 16px;
+    text-align: center;
+    vertical-align: center;
 }
 
 
@@ -74,8 +88,8 @@
 .wp-table th {
     padding: 8px 8px;
     display: table-cell;
-    text-align: left;
-    vertical-align: top;
+    text-align: center;
+    vertical-align: center;
 }
 
 .wp-table th {

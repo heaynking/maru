@@ -26,33 +26,29 @@
     </script>
 </head>
 <body onload="load()">
-<div id="myform">
-<table>
-    <tr>
-        <td><input type="text" placeholder="Search..." id="menu">
+<form id="myform" >
+        <input  type="text" placeholder="Search..." id="menu">
         <div id='button-holder' onclick="Javascript:addRow()">
         <img src='search_icon.png' />
-        </div></td>
-        
-    </tr>
-    <tr>&nbsp;</tr>
-    <tr>&nbsp;</tr>
-</table>
-
-</div>
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+</form>
 
 <div id="mydata">
 <table id="myTableData"  border="1" cellpadding="2" class="wp-table">
+    <td>삭제 여부</td>
+    <td>メニュー</td>
+    <td>메뉴</td>
+    <td>수량 증감</td>
+    <td>수량</td>
+    <td>가격</td>
 </table>
 &nbsp;<br/>
 </div>
-
-<table>
-    
-    <td><b id="total"></b></td>
-    <td><input type="button" value="Total" id="total_btn" onclick="Javascript:pricesum()"></td>
-
-</table>
-
+<form id="myform">
+<b id="total"></b><input type="button" value="Total" id="total_btn" onclick="Javascript:pricesum()">
+</form>
 </body>
 </html>
