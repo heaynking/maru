@@ -1,28 +1,26 @@
 #myform{
     margin: 0 auto;
-    width: 500px;
+    width: 650px;
 }
 
+
 #menu{
-    border-top:thin solid  #e5e5e5;
-    border-right:thin solid #e5e5e5;
-    border-bottom:0;
-    border-left:thin solid  #e5e5e5;
-    box-shadow:0px 1px 1px 1px #e5e5e5;
+    border-top: solid  black;
+    border-bottom: solid black;
+    border-left: solid  black;
     float:left;
-    height:86px;
+    height:108px;
     margin-left:auto; 
     margin-right:auto; 
     outline:0;
-    padding:.4em 0 .4em .6em; 
-    width:300px;
-    font-size: 30px;
+    width:500px;
+    font-size: 50px;
 }
   
 #button-holder{
-    background-color:#f1f1f1;
-    border-top:thin solid #e5e5e5;
-    box-shadow:1px 1px 1px 1px #e5e5e5;
+    background-color: black;
+    border-top: solid black ;
+    border-bottom: solid black;
     cursor:pointer;
     float:left;
     height:110px;    
@@ -37,33 +35,17 @@
     width:50px; 
 }
 #total{
-    border: 0;
-    background: transparent;
     border-bottom: 1px solid black;
-    box-shadow:0px 1px 1px 1px #e5e5e5;
     float:left;
-    height:80px;  
-    margin-left:auto; 
-    margin-right:auto;
+    height:80px;
     outline:0;
-    padding:.4em 0 .4em .6em; 
-    width:200px; 
+    width:100%; 
     font-size: 30px;
     bottom: 0;
     text-align: center;
     line-height: 80px;
 }
-#total_btn{
-    background-color:#f1f1f1;
-    border-top:thin solid #e5e5e5;
-    cursor:pointer;
-    float:left;
-    height:105px;    
-    margin-left:auto; 
-    margin-right:auto;
-    text-align:center;
-    width:100px;
-}
+
 
 .wp-table tr:nth-child(odd) {
     background-color: #fff;
@@ -97,7 +79,7 @@
 }
  
 .wp-table {
-    font-size: 20px!important;
+    font-size: 30px!important;
     border: 1px solid #ccc;
     border-collapse: collapse;
     border-spacing: 0;

@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" type="text/css" href="semifinal.css">
-    <script type="text/javascript" src="app.js"></script>
-    <meta charset="UTF-8">
-    <script type="text/javascript", src="jquery/lib/jquery.js"></script>
-    <script type="text/javascript", src='jquery/lib/jquery.bgiframe.min.js'></script>
-    <script type="text/javascript", src='jquery/lib/jquery.ajaxQueue.js'></script>
-    <script type="text/javascript", src='jquery/jquery.autocomplete.js'></script>
-    <link rel="stylesheet" type="text/css" href="jquery/jquery.autocomplete.css">
-    <script language="Javascript">
-        var availableTags = [
-               'かいせんチヂミ 海鮮チヂミ 해물전 1090',
-               'かいせんなべ 海鮮鍋 해물탕 1590',
-               'かくてき カクテキ 깍두기 390',
-               'ちゃぷちぇ チャプチェ 잡채 790',
-        ];
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="semifinal.css">
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript", src="jquery/lib/jquery.js"></script>
+        <script type="text/javascript", src='jquery/lib/jquery.bgiframe.min.js'></script>
+        <script type="text/javascript", src='jquery/lib/jquery.ajaxQueue.js'></script>
+        <script type="text/javascript", src='jquery/jquery.autocomplete.js'></script>
+        <link rel="stylesheet" type="text/css" href="jquery/jquery.autocomplete.css">
+        <script language="Javascript">
+            var availableTags = [
+                   'かいせんチヂミ 海鮮チヂミ 해물전 1090',
+                   'かいせんなべ 海鮮鍋 해물탕 1590',
+                   'かくてき カクテキ 깍두기 390',
+                   'ちゃぷちぇ チャプチェ 잡채 790',
+            ];
 
-        $(document).ready(function(){
-            $("#menu").autocomplete(availableTags, {
-                matchContains: true,
-                selectFirst: false
+            $(document).ready(function(){
+                $("#menu").autocomplete(availableTags, {
+                    matchContains: true,
+                    selectFirst: false
+                });
             });
-        });
-    </script>
-</head>
-<body onload="load()">
-<form id="myform" >
-        <input  type="text" placeholder="Search..." id="menu">
-        <div id='button-holder' onclick="Javascript:addRow()">
-        <img src='search_icon.png' />
-        </div>
-        <br></br>
-        <br></br>
-        <br></br>
-</form>
+        </script>
+    </head>
 
-<div id="mydata">
-<table id="myTableData"  border="1" cellpadding="2" class="wp-table">
-    <td>삭제 여부</td>
-    <td>メニュー</td>
-    <td>메뉴</td>
-    <td>수량 증감</td>
-    <td>수량</td>
-    <td>가격</td>
-</table>
-&nbsp;<br/>
-</div>
-<form id="myform">
-<b id="total"></b><input type="button" value="Total" id="total_btn" onclick="Javascript:pricesum()">
-</form>
-</body>
+    <body onload="load()">
+        <form clss="searchform" id="myform" >
+            <input  type="text" placeholder="Search..." id="menu">
+            <div id='button-holder' onclick="Javascript:addRow()">
+                <img src='search_icon.png' />
+            </div>
+            <br></br>
+            <br></br>
+            <br></br>
+        </form>
+
+        <div id="mydata">
+            <table id="myTableData"  border="1" cellpadding="2" class="wp-table">
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>メニュー</td>
+                <td>메뉴</td>
+                <td>수량 증감</td>
+                <td>수량</td>
+                <td>가격</td>
+            </table>
+            &nbsp;<br/>
+        </div>
+
+        <form id="myform">
+            <b id="total">合計金額が表示されます</b>
+        </form>
+    </body>
 </html>
