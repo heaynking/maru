@@ -19,6 +19,7 @@
 
             $(document).ready(function(){
                 $("#menu").autocomplete(availableTags, {
+                    maxResults:10,
                     matchContains: true,
                     selectFirst: false
                 });
