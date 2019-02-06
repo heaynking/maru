@@ -34,12 +34,13 @@
     width:50px; 
 }
 #total{
+    margin-top: 50px;
     border-bottom: 1px solid black;
     float:left;
     height:80px;
     outline:0;
     width:100%; 
-    font-size: 30px;
+    font-size: 50px;
     bottom: 0;
     text-align: center;
     line-height: 80px;
@@ -79,7 +80,7 @@
  
 .wp-table {
     margin-top: 50px;
-    font-size: 30px!important;
+    font-size: 50px!important;
     border: 1px solid #ccc;
     border-collapse: collapse;
     border-spacing: 0;
