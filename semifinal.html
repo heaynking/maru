@@ -17,9 +17,10 @@
                    'ちゃぷちぇ チャプチェ 잡채 790',
             ];
 
+
             $(document).ready(function(){
                 $("#menu").autocomplete(availableTags, {
-                    maxResults:10,
+                    scrollHeight: 1000,
                     matchContains: true,
                     selectFirst: false
                 });
