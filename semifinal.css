@@ -1,19 +1,22 @@
 #myform{
     width: 100%;
+    text-align: center;
+    font-size: 30px;
 }
 
-
 #menu{
-    border-top: solid  black;
-    border-bottom: solid black;
-    border-left: solid  black;
+    border-top: solid  orange;
+    border-bottom: solid orange;
+    border-left: solid  orange;
+    border-right: solid  orange;
     float:left;
-    height:108px;
+    height:130px;
     margin-left:auto; 
     margin-right:auto; 
     outline:0;
-    width:70%;
+    width:100%;
     font-size: 50px;
+    font: sans-serif;
 }
   
 #button-holder{

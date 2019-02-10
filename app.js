@@ -1,3 +1,11 @@
+function date(){
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = y + "/" + m + "/" + d;
+}
+
 function plus(obj){
     var index = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("myTableData");
@@ -25,7 +33,15 @@ function minus(obj){
     
 }
 
+function getTable(){
+    var table = document.getElementById("myTableData");
+
+
+}
+
 function addRow() {
+
+
     var Mymenu = document.getElementById("menu");
     var Mymenu_split = Mymenu.value.split(' ');
     var price_mixed = Mymenu_split[3];
@@ -35,12 +51,14 @@ function addRow() {
     var row = table.insertRow(rowCount);
     document.getElementById("menu").value = "";
 
-    row.insertCell(0).innerHTML= '<input style="height:60px; width:60px; font-size:30px;" type="button" value = "X" onClick="Javacsript:deleteRow(this)">';
-    row.insertCell(1).innerHTML= Mymenu_split[1];
-    row.insertCell(2).innerHTML= Mymenu_split[2];
-    row.insertCell(3).innerHTML= '<input style="height:60px; width:50px; font-size:30px;" type="button" value = "-" onClick="Javacsript:minus(this)">&nbsp;&nbsp;&nbsp;&nbsp;<input style="height:60px; width:50px; font-size:30px;" type="button" value = "+" onClick="Javacsript:plus(this)">';
-    row.insertCell(4).innerHTML= '1';
-    row.insertCell(5).innerHTML= price;
+    var table_json = {"jpn":Mymenu_split[1], "kor":Mymenu_split[2], "num":1, "price":price};
+    row.insertCell(0).innerHTML= '<input style="height:60px; width:60px; font-size:30px; color:orange;" type="button" value = "X" onClick="Javacsript:deleteRow(this)">';
+    row.insertCell(1).innerHTML= table_json.jpn;
+    row.insertCell(2).innerHTML= table_json.kor;
+    row.insertCell(3).innerHTML= '<input style="color:orange; height:60px; width:50px; font-size:30px;" type="button" value = "-" onClick="Javacsript:minus(this)">&nbsp;&nbsp;&nbsp;&nbsp;<input style="height:60px; width:50px; font-size:30px; color:orange;" type="button" value = "+" onClick="Javacsript:plus(this)">';
+    row.insertCell(4).innerHTML= table_json.num;
+    row.insertCell(5).innerHTML= table_json.price;
+
     pricesum();
 }
 
@@ -57,16 +75,17 @@ function deleteRow(obj) {
      
     var index = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("myTableData");
+    var result = confirm("지우시겠습니까?");
+    if (result){
     table.deleteRow(index);
-
     pricesum();
-   
+    }
 }
 
 
 
 function load() {
-   
+
     console.log("Page load finished");
 
 }

@@ -15,6 +15,16 @@
                    'かいせんなべ 海鮮鍋 해물탕 1590',
                    'かくてき カクテキ 깍두기 390',
                    'ちゃぷちぇ チャプチェ 잡채 790',
+                   'きむちもりあわせ キムチ盛合せ 김치모리 790',
+                   'なむるもりあわせ ナムル盛り合わせ 나물모리 790',
+                   'まるちぢみ まるチヂミ 마루전 1190',
+                   'きむちちーずちぢみ キムチチーズチヂミ 김치치즈전 1090',
+                   'さむぎょぷさる サムギョプサル 삼겹살 1390',
+                   'ぷるこぎ プルコギ 불고기 1490',
+                   'たこきむち タコキムチ 타코김치 790',
+                   'なまびーる 生ビール 나마 550',
+                   'はいぼーる ハイボール 하이볼 450',
+                   'なまぐれちゅうーはい 生グレちゅーはい 나마그레츄하이',
             ];
 
 
@@ -25,15 +35,14 @@
                     selectFirst: false
                 });
             });
+
         </script>
     </head>
 
     <body onload="load()">
         <form clss="searchform" id="myform" >
-            <input  type="text" placeholder="Search..." id="menu">
-            <div id='button-holder' onclick="Javascript:addRow()">
-                <img src='search_icon.png' />
-            </div>
+            <h1>朴さんのダイニングまる <font style="color:orange;"> :D</font></h1>
+            <input  type="text" autofocus="autofocus" placeholder="무엇이 궁금하오이까..." id="menu" onkeydown="if (event.keyCode==13) {addRow(); return false;}">          
             <br></br>
             <br></br>
             <br></br>
