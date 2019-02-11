@@ -63,6 +63,7 @@ function addRow() {
     row.insertCell(4).innerHTML= table_json.price;
 
     pricesum();
+    document.getElementById("menu").focus();
 }
 
 function pricesum(){
