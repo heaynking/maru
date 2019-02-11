@@ -4,6 +4,7 @@
     font-size: 30px;
 }
 
+
 #menu{
     border-top: solid  orange;
     border-bottom: solid orange;
@@ -14,27 +15,29 @@
     margin-left:auto; 
     margin-right:auto; 
     outline:0;
-    width:100%;
+    width:98%;
     font-size: 50px;
     font: sans-serif;
+
 }
   
 #button-holder{
-    background-color: black;
-    border-top: solid black ;
-    border-bottom: solid black;
+    position: absolute;
+    top:185px;
+    right: 5px;
+    margin-top: -10px;
     cursor:pointer;
     float:left;
     height:110px;    
     margin-left:auto; 
     margin-right:auto;
     text-align:center;
-    width:20%;
+    width:10%;
 }
   
 #button-holder img{
-    margin:30px;
-    width:50px; 
+    margin:40px;
+    width:40px; 
 }
 #total{
     margin-top: 50px;

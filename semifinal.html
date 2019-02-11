@@ -22,9 +22,9 @@
                    'さむぎょぷさる サムギョプサル 삼겹살 1390',
                    'ぷるこぎ プルコギ 불고기 1490',
                    'たこきむち タコキムチ 타코김치 790',
-                   'なまびーる 生ビール 나마 550',
-                   'はいぼーる ハイボール 하이볼 450',
-                   'なまぐれちゅうーはい 生グレちゅーはい 나마그레츄하이 600',
+                   'なまびーる 生ビール 나마 550 drink',
+                   'はいぼーる ハイボール 하이볼 450 drink',
+                   'なまぐれちゅうーはい 生グレちゅーはい 나마그레츄하이 600 drink',
             ];
 
 
@@ -42,7 +42,12 @@
     <body onload="load()">
         <form clss="searchform" id="myform" >
             <h1>朴さんのダイニングまる <font style="color:orange;"> :D</font></h1>
-            <input  type="text" autofocus="autofocus" placeholder="검색해유" id="menu" onkeydown="if (event.keyCode==13) {addRow(); return false;}">          
+            <input  type="text" autofocus="autofocus" placeholder="검색해유" id="menu" onkeydown="if (event.keyCode==13) {addRow(); return false;}">
+            <div id='button-holder' onclick="Javascript:addRow()">
+                <img src='search_icon.png' />
+            </div>  
+
+          
             <br></br>
             <br></br>
             <br></br>
@@ -50,12 +55,6 @@
 
         <div id="mydata">
             <table id="myTableData"  border="1" cellpadding="2" class="wp-table">
-                <td>&nbsp;&nbsp;&nbsp;</td>
-                <td>メニュー</td>
-                <td>메뉴</td>
-                <td>수량 증감</td>
-                <td>수량</td>
-                <td>가격</td>
             </table>
             &nbsp;<br/>
         </div>

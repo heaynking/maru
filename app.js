@@ -48,16 +48,19 @@ function addRow() {
     var price = price_mixed.match(/\d+/g).map(Number);
     var table = document.getElementById("myTableData");
     var rowCount = table.rows.length;
-    var row = table.insertRow(rowCount);
+    if (Mymenu_split[4]=="drink"){
+        var row = table.insertRow(0);
+    }else{
+        var row = table.insertRow(rowCount);    
+    }
     document.getElementById("menu").value = "";
 
     var table_json = {"jpn":Mymenu_split[1], "kor":Mymenu_split[2], "num":1, "price":price};
     row.insertCell(0).innerHTML= '<input style="height:60px; width:60px; font-size:30px; color:orange;" type="button" value = "X" onClick="Javacsript:deleteRow(this)">';
     row.insertCell(1).innerHTML= table_json.jpn;
-    row.insertCell(2).innerHTML= table_json.kor;
-    row.insertCell(3).innerHTML= '<input style="color:orange; height:60px; width:50px; font-size:30px;" type="button" value = "-" onClick="Javacsript:minus(this)">&nbsp;&nbsp;&nbsp;&nbsp;<input style="height:60px; width:50px; font-size:30px; color:orange;" type="button" value = "+" onClick="Javacsript:plus(this)">';
-    row.insertCell(4).innerHTML= table_json.num;
-    row.insertCell(5).innerHTML= table_json.price;
+    row.insertCell(2).innerHTML= '<input style="color:orange; height:60px; width:50px; font-size:30px;" type="button" value = "-" onClick="Javacsript:minus(this)">&nbsp;&nbsp;&nbsp;&nbsp;<input style="height:60px; width:50px; font-size:30px; color:orange;" type="button" value = "+" onClick="Javacsript:plus(this)">';
+    row.insertCell(3).innerHTML= table_json.num;
+    row.insertCell(4).innerHTML= table_json.price;
 
     pricesum();
 }
@@ -66,7 +69,7 @@ function pricesum(){
   var table = document.getElementById("myTableData"), sumVal = 0;
 
   for (var i = 1; i < table.rows.length; i++){
-    sumVal = sumVal + parseInt(table.rows[i].cells[4].textContent) * parseInt(table.rows[i].cells[5].textContent);
+    sumVal = sumVal + parseInt(table.rows[i].cells[3].textContent) * parseInt(table.rows[i].cells[4].textContent);
   }
   document.getElementById("total").innerHTML = '合計：　¥　' + sumVal;
 }
