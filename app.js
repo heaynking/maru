@@ -9,12 +9,12 @@ document.getElementById("date").innerHTML = y + "/" + m + "/" + d;
 function plus(obj){
     var index = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("myTableData");
-    for (var i = 1; i < table.rows.length; i++){
-      var value = parseInt(table.rows[index].cells[4].textContent);
+    for (var i = 0; i < table.rows.length; i++){
+      var value = parseInt(table.rows[index].cells[3].textContent);
     }
     value++;
-    for (var i = 1; i < table.rows.length; i++){
-      table.rows[index].cells[4].textContent = value;
+    for (var i = 0; i < table.rows.length; i++){
+      table.rows[index].cells[3].textContent = value;
     }
     pricesum();
     
@@ -22,12 +22,12 @@ function plus(obj){
 function minus(obj){
     var index = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("myTableData");
-    for (var i = 1; i < table.rows.length; i++){
-      var value = parseInt(table.rows[index].cells[4].textContent);
+    for (var i = 0; i < table.rows.length; i++){
+      var value = parseInt(table.rows[index].cells[3].textContent);
     }
     value--;
-    for (var i = 1; i < table.rows.length; i++){
-      table.rows[index].cells[4].textContent = value;
+    for (var i = 0; i < table.rows.length; i++){
+      table.rows[index].cells[3].textContent = value;
     }
     pricesum();
     
@@ -69,7 +69,7 @@ function addRow() {
 function pricesum(){
   var table = document.getElementById("myTableData"), sumVal = 0;
 
-  for (var i = 1; i < table.rows.length; i++){
+  for (var i = 0; i < table.rows.length; i++){
     sumVal = sumVal + parseInt(table.rows[i].cells[3].textContent) * parseInt(table.rows[i].cells[4].textContent);
   }
   document.getElementById("total").innerHTML = '合計：　¥　' + sumVal;
